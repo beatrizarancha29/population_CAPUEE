@@ -1,6 +1,6 @@
 import requests
 import streamlit as st
-from api_connection import get_us_population
+from api_connection import get_population_data
 
 base='light'
 backgroundColor ='white'
