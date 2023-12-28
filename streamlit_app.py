@@ -41,19 +41,10 @@ col3.write(f" Population: {population}")
 #####################################################################################3
 populations = []
 for country, iso_code in country_data:
-    url = url_base + iso_code
-    response = requests.get(url, headers=headers)
+    population = get_population_data(country, iso_code)
 
-    if response.status_code == 200:
-        country_data_json = response.json()
-        population = country_data_json.get('population', None)
-
-        if population is not None:
-            populations.append((country, population))
-        else:
-            st.warning(f'Population data not available for {country}')
-    else:
-        st.error(f'Failed to fetch data for {country}: {response.status_code}')
+ populations.append((country, population))
+   
 
 # Display the bar chart in a Streamlit app
 if populations:
