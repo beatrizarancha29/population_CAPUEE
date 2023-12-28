@@ -17,15 +17,30 @@ st.write( """
 
 col1, col2, col3 = st.columns(3)
 
-# Display the text in each column
+population = get_population_data("United States", "US")
+col1.image('usa.png')
 col1.write("USA")
+col1.write(f" Population: {population}")
+
+population = get_population_data("India", "IN")
+col2.image('india')
+col2.write("India")
+col2.write(f" Population: {population}")
+
+population = get_population_data("China", "CN")
+col2.image('china.png')
 col2.write("China")
-col3.write("India")
+col2.write(f" Population: {population}")
+
+# Display the text in each column
+#col1.write("USA")
+#col2.write("China")
+#col3.write("India")
 
 ##############################################################################
 #population = get_us_population()
 #st.write(f"Population USA: {population}")
-population = get_population_data("India", "IN")
-st.write(f" Population: {population}")
+#population = get_population_data("India", "IN")
+#st.write(f" Population: {population}")
 
 
