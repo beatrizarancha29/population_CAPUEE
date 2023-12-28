@@ -42,7 +42,6 @@ col3.write(f" Population: {population}")
 populations = []
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
- 
     populations.append((country, population))
    
 
