@@ -14,7 +14,7 @@ def get_us_population():
 	"X-RapidAPI-Host": "world-geo-data.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers, params=params)
-outputs = response.json()
-population = outputs['population']
-return population
+	response = requests.get(url, headers=headers, params=params)
+	outputs = response.json()
+	population = outputs['population']
+	return population
