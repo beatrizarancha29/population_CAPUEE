@@ -13,10 +13,12 @@ col2.image('flags.jpg')
 st.write( """
 ## Countries with the largest population
 """)
-col1, col2, col3 = st.columns (3)
 
-col1.write("China")
-col2.write("USA")
+col1, col2, col3 = st.columns(3)
+
+# Display the text in each column
+col1.write("USA")
+col2.write("China")
 col3.write("India")
 
 population =get_us_population()
