@@ -32,17 +32,6 @@ col3.image('china.png')
 col3.write("China")
 col3.write(f" Population: {population}")
 
-#population = get_population_data("China", "CN")
-#col2.image('china.png')
-#col2.write("China")
-#col2.write(f" Population: {population}")
-
-
-# Display the text in each column
-#col1.write("USA")
-#col2.write("China")
-#col3.write("India")
-
 ##############################################################################
 #population = get_us_population()
 #st.write(f"Population USA: {population}")
@@ -50,7 +39,24 @@ col3.write(f" Population: {population}")
 #st.write(f" Population: {population}")
 
 #####################################################################################3
+populations = []
 
+for country, iso_code in country_data:
+    url = url_base + iso_code
+    response = requests.get(url, headers=headers)
+    country_data_json = response.json()
+    population = country_data_json.get('population', None)
+    populations.append((country, population))
+
+countries, population_values = zip(*populations)
+
+# Use st.bar_chart to display the bar chart
+st.bar_chart(dict(zip(countries, population_values)))
+
+# Optionally, you can add labels and title
+st.xlabel('Country')
+st.ylabel('Population')
+st.title('Population of Countries')
 
 
 
