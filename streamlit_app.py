@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 import pandas as pd 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from api_connection import get_population_data
 from api_connection import country_data
 #import matplotlib.pyplot as plt
@@ -90,6 +90,16 @@ else:
     st.warning("No population data available.")
 
 ##############################################################################################################333
+
+import numpy as np
+
+# Generate random data for the entire world
+world_data = pd.DataFrame(
+    np.random.randn(1000, 2) * 100,
+    columns=['lat', 'lon'])
+
+# Display the map with a wider range of coordinates to cover the whole world
+st.map(world_data)
 
 #if populations:
     # Create a pie chart using matplotlib
