@@ -23,6 +23,5 @@ col2.write("China")
 col3.write("India")
 
 ##############################################################################
-
 population = get_us_population()
 st.write(f"Population USA: {population}")
