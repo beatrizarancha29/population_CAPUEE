@@ -42,8 +42,8 @@ col3.write(f" Population: {population}")
 populations = []
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
-
- populations.append((country, population))
+ 
+    populations.append((country, population))
    
 
 # Display the bar chart in a Streamlit app
@@ -59,6 +59,7 @@ if populations:
     st.title('Population of Countries')
 else:
     st.warning("No population data available.")
+
 
 
 
