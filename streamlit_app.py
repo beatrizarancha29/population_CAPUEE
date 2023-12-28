@@ -1,9 +1,9 @@
 import requests
 import streamlit as st
-from api_connection import get_population_data
-from api_connection import country_data
 import plotly.express as px
 import pandas as pd 
+from api_connection import get_population_data
+from api_connection import country_data
 #import matplotlib.pyplot as plt
 
 base='light'
