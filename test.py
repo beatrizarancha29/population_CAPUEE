@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import numpy as np
 
 # Sample data
@@ -15,5 +14,13 @@ ax.set_xlabel('X-axis')
 ax.set_ylabel('Y-axis')
 ax.set_title('Sinusoidal Curve')
 
-# Display the plot using st.pyplot
-st.pyplot(fig)
+# Save the plot as an image
+image_path = "sinusoidal_plot.png"
+fig.savefig(image_path)
+
+# Display the image using st.image
+st.image(image_path, use_column_width=True)
+
+# Optionally, remove the saved image file
+# import os
+# os.remove(image_path)
