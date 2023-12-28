@@ -91,6 +91,6 @@ def get_population_data(country, iso_code):
     population = country_data_json.get('population')
     return population
     
-for country_name, iso_code in country_data:
+for country, iso_code in country_data:
     population = get_population_data(country_name, iso_code)
 
