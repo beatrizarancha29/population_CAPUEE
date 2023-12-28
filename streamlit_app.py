@@ -19,4 +19,5 @@ col1('China')
 col2('USA')
 col3('India')
 
-return outputs
+population =get_us_population()
+st.write(f"Population USA: {population}")
