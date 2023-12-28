@@ -69,25 +69,7 @@ else:
     st.warning("No population data available.")
 
 ################################################################################################
-if populations:
-    countries, population_values = zip(*populations)
 
-    # Create a pie chart using Matplotlib
-    fig, ax = plt.subplots()
-    ax.pie(population_values, labels=countries, autopct='%1.1f%%', startangle=90, colors=['lightcoral', 'lightblue', 'lightgreen'])
-    
-    # Set aspect ratio to be equal, ensuring a circular pie chart
-    ax.axis('equal')  
-
-    # Display the pie chart using st.pyplot
-    st.pyplot(fig)
-
-    # Optionally, you can add a title and labels using st.write
-    st.write("Population Data Pie Chart")
-    st.write("Countries:", countries)
-    st.write("Population Values:", population_values)
-else:
-    st.warning("No population data available.")
 
 ##############################################################################################################333
 
