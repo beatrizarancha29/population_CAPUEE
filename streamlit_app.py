@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 from api_connection import get_population_data
 from api_connection import country_data
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 base='light'
 backgroundColor ='white'
@@ -75,17 +75,17 @@ else:
 
 ##############################################################################################################333
 
-if populations:
+#if populations:
     # Create a pie chart using matplotlib
-    fig, ax = plt.subplots()
-    ax.pie(populations, labels=None, autopct='%1.1f%%', startangle=90)
-    ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
-    st.pyplot(fig)
+   # fig, ax = plt.subplots()
+    #ax.pie(populations, labels=None, autopct='%1.1f%%', startangle=90)
+    #ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
+   # st.pyplot(fig)
 
     # Optionally, you can add a title
-    st.title('Population Distribution Pie Chart')
-else:
-    st.warning("No population data available.")
+   # st.title('Population Distribution Pie Chart')
+#else:
+   # st.warning("No population data available.")
 
 
 
