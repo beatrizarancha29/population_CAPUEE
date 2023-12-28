@@ -92,5 +92,5 @@ def get_population_data(country, iso_code):
     return population
     
 for country, iso_code in country_data:
-    population = get_population_data(country_name, iso_code)
+    population = get_population_data(country, iso_code)
 
