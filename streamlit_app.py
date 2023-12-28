@@ -1,6 +1,5 @@
 import requests
 import streamlit as st
-import plotly.express as px
 import pandas as pd 
 from api_connection import get_population_data
 from api_connection import country_data
@@ -70,19 +69,22 @@ else:
 
 ################################################################################################
 if populations:
-    # Create a DataFrame for Plotly
-    df = pd.DataFrame(populations, columns=['Country', 'Population'])
+    countries, population_values = zip(*populations)
 
-    # Create a histogram with Plotly Express
-    fig = px.histogram(df, x='Population', nbins=30, marginal='box', color_discrete_sequence=['skyblue'])
-
-    # Display the chart using st.plotly_chart
-    st.plotly_chart(fig)
+    # Create a pie chart using Matplotlib
+    fig, ax = plt.subplots()
+    ax.pie(population_values, labels=countries, autopct='%1.1f%%', startangle=90, colors=['lightcoral', 'lightblue', 'lightgreen'])
     
+    # Set aspect ratio to be equal, ensuring a circular pie chart
+    ax.axis('equal')  
+
+    # Display the pie chart using st.pyplot
+    st.pyplot(fig)
+
     # Optionally, you can add a title and labels using st.write
-    st.write("# Population Distribution of Countries")
-    st.write("### X-axis: Population")
-    st.write("### Y-axis: Frequency")
+    st.write("Population Data Pie Chart")
+    st.write("Countries:", countries)
+    st.write("Population Values:", population_values)
 else:
     st.warning("No population data available.")
 
