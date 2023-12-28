@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 from api_connection import get_population_data
 from api_connection import country_data
-mport streamlit as st
+import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import matplotlib.pyplot as plt
 #import matplotlib.pyplot as plt
