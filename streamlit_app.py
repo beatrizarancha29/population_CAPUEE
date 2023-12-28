@@ -23,5 +23,8 @@ col2.write("China")
 col3.write("India")
 
 ##############################################################################
-population = get_us_population()
-st.write(f"Population USA: {population}")
+#population = get_us_population()
+#st.write(f"Population USA: {population}")
+population = get_population_data(India, IN)
+st.write(f"ISO Code: {IN}, Country: {India}, Population: {population}")
+
