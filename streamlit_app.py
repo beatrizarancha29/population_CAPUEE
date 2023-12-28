@@ -3,8 +3,8 @@ import streamlit as st
 from api_connection import get_population_data
 from api_connection import country_data
 import streamlit as st
-st.set_option('deprecation.showPyplotGlobalUse', False)
-import matplotlib.pyplot as plt
+import plotly.express as px
+import pandas as pd 
 #import matplotlib.pyplot as plt
 
 base='light'
@@ -71,11 +71,15 @@ else:
 
 ################################################################################################
 if populations:
-    _, population_values = zip(*populations)
+    # Create a DataFrame for Plotly
+    df = pd.DataFrame(populations, columns=['Country', 'Population'])
 
-    # Use st.histogram to display the histogram
-    st.histogram(population_values, bins=30, color="skyblue", edgecolor="black")
+    # Create a histogram with Plotly Express
+    fig = px.histogram(df, x='Population', nbins=30, marginal='box', color_discrete_sequence=['skyblue'])
 
+    # Display the chart using st.plotly_chart
+    st.plotly_chart(fig)
+    
     # Optionally, you can add a title and labels using st.write
     st.write("# Population Distribution of Countries")
     st.write("### X-axis: Population")
