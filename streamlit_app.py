@@ -63,12 +63,15 @@ else:
 
 ################################################################################################
 if populations:
-    st.hist(populations, bins=20, edgecolor='black', linewidth=1.2)
+    _, population_values = zip(*populations)
 
-    # Optionally, you can add labels and title
-    st.xlabel('Population Range')
-    st.ylabel('Frequency')
-    st.title('Population Distribution Histogram')
+    # Use st.histogram to display the histogram
+    st.histogram(population_values, bins=30, color="skyblue", edgecolor="black")
+
+    # Optionally, you can add a title and labels using st.write
+    st.write("# Population Distribution of Countries")
+    st.write("### X-axis: Population")
+    st.write("### Y-axis: Frequency")
 else:
     st.warning("No population data available.")
 
