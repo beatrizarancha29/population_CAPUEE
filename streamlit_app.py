@@ -15,9 +15,9 @@ st.write( """
 """)
 col1, col2, col3 = st.columns (3)
 
-col1('China')
-col2('USA')
-col3('India')
+col1.write('China')
+col2.write('USA')
+col3.write('India')
 
 population =get_us_population()
 st.write(f"Population USA: {population}")
