@@ -16,7 +16,7 @@ col2.image('flags.jpg')
 col3.image('people.jpg')
 st.write("""
 
-### World population: 8081718834)
+### World population: 8081718834 )
 
 st.write( """
 ## Countries with the largest population
