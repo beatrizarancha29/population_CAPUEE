@@ -47,8 +47,8 @@ for country, iso_code in country_data:
     populations.append((country, population))
    
 
-# Display the bar chart in a Streamlit app
-# Display the bar chart in a Streamlit app
+st.write("# Population of Countries")
+
 if populations:
     countries, population_values = zip(*populations)
 
@@ -56,9 +56,8 @@ if populations:
     st.bar_chart(dict(zip(countries, population_values)))
 
     # Optionally, you can add a title and labels using st.write
-    st.write("# Population of Countries")
-    st.write("### X-axis: Country")
-    st.write("### Y-axis: Population")
+    
+
 else:
     st.warning("No population data available.")
 
