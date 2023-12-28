@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 import pandas as pd 
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 from api_connection import get_population_data
 from api_connection import country_data
 #import matplotlib.pyplot as plt
