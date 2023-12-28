@@ -41,7 +41,7 @@ col3.write(f" Population: {population}")
 #####################################################################################3
 populations = []
 
-for country, iso_code in country_data:
+for country_name, iso_code in country_data:
     url = url_base + iso_code
     response = requests.get(url, headers=headers)
     country_data_json = response.json()
