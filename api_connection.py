@@ -1,4 +1,3 @@
-""" This script store the function required to stream data from the API of your choice"""
 
 import requests
 import json
