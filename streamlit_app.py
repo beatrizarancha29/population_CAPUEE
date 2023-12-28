@@ -54,11 +54,12 @@ if populations:
     st.bar_chart(dict(zip(countries, population_values)))
 
     # Optionally, you can add labels and title
-    st.xlabel('Country')
-    st.ylabel('Population')
-    st.title('Population of Countries')
+    st.xlabel('Country')  # Remove this line
+    st.ylabel('Population')  # Remove this line
+    st.title('Population of Countries')  # Remove this line
 else:
     st.warning("No population data available.")
+
 
 
 
