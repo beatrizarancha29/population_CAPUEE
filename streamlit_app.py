@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot
+import plotly.express as px
 from api_connection import get_population_data
 from api_connection import country_data
 
