@@ -97,7 +97,7 @@ if populations:
     st.pyplot(fig)
 
     # Optionally, you can add a title
-   st.title('Population Distribution Pie Chart')
+st.title('Population Distribution Pie Chart')
 else:
    st.warning("No population data available.")
 
