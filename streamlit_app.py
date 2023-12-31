@@ -49,13 +49,21 @@ for country, iso_code in country_data:
 ###########################################################################################   
 st.write("# Population of Countries")
 
-if populations:
-    countries, population_values = zip(*populations)
+#if populations:
+    #countries, population_values = zip(*populations)
     # Use st.bar_chart to display the bar chart
-    st.bar_chart(dict(zip(countries, population_values)))
-else:
-    st.warning("No population data available.")
+    #st.bar_chart(dict(zip(countries, population_values)))
+#else:
+    #st.warning("No population data available.")
+population_dict = dict(populations)
 
+# Create a bar chart using Streamlit
+st.bar_chart(population_dict)
+
+# Optionally, you can add labels and a title
+st.xlabel('Countries')
+st.ylabel('Population')
+st.title('Population Data')
 ################################################################################################
 
 if populations:
