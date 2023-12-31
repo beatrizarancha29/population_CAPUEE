@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot
-import plotly.express as px
+import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -72,9 +72,12 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
-st.title("Population Distribution by Country")
-st.plotly_chart(figure=px.pie(df, values='Population', names='Country', title='Population Distribution'))
+# Create a pie chart using Streamlit
+fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
+fig.update_layout(title='Population Distribution by Country')
 
+st.title("Population Distribution by Country")
+st.plotly_chart(fig)
 
 
 #xxx
