@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 import pandas as pd 
 import numpy as np
-import matplotlib.pyplot
+#import matplotlib.pyplot
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -49,12 +49,12 @@ for country, iso_code in country_data:
 ###########################################################################################   
 st.write("# Population of Countries")
 
-#if populations:
-    #countries, population_values = zip(*populations)
+if populations:
+    countries, population_values = zip(*populations)
     # Use st.bar_chart to display the bar chart
-    #st.bar_chart(dict(zip(countries, population_values)))
-#else:
-    #st.warning("No population data available.")
+    st.bar_chart(dict(zip(countries, population_values)))
+else:
+    st.warning("No population data available.")
 # Create a bar chart using Matplotlib
 #population_dict = dict(populations)
 
@@ -67,17 +67,17 @@ st.write("# Population of Countries")
 #st.title('Population Data')
 ################################################################################################
 
-if populations:
+#if populations:
     # Create a pie chart using matplotlib
-    fig, ax = plt.subplots()
-    ax.pie(populations, labels=None, autopct='%1.1f%%', startangle=90)
-    ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
-    st.pyplot(fig)
+    #fig, ax = plt.subplots()
+    #ax.pie(populations, labels=None, autopct='%1.1f%%', startangle=90)
+   # ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
+   # st.pyplot(fig)
 
     # Optionally, you can add a title
-    st.title('Population Distribution Pie Chart')
-else:
-   st.warning("No population data available.")
+  #  st.title('Population Distribution Pie Chart')
+#else:
+  # st.warning("No population data available.")
 
 
 
