@@ -7,8 +7,7 @@ from api_connection import get_population_data
 from api_connection import country_data
 
 import matplotlib
-matplotlib.use('Agg')  # Agg backend is suitable for Streamli
-import matplotlib.pyplot as plt
+
 
 
 
