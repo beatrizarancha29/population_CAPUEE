@@ -50,9 +50,15 @@ for country, iso_code in country_data:
 st.write("# Population of Countries")
 
 if populations:
-    countries, population_values = zip(*populations)
+    #countries, population_values = zip(*populations)
     # Use st.bar_chart to display the bar chart
-    st.bar_chart(dict(zip(countries, population_values)))
+   # st.bar_chart(dict(zip(countries, population_values)))
+    data = pd.DataFrame({'Country': countries, 'Population': population_values})
+    st.bar_chart(data)
+
+
+
+
 else:
     st.warning("No population data available.")
 # Create a bar chart using Matplotlib
