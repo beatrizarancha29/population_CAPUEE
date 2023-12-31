@@ -44,19 +44,19 @@ col3.write(f" Population: {population}")
 
 col1, col2, col3, = st.columns(3)
 
-population = get_population_data("United States", "US")
-col1.image('usa.png')
-col1.write("USA")
+population = get_population_data ("Brazil", "BR")
+col1.image('brazil.png')
+col1.write("Brazil")
 col1.write(f" Population: {population}")
 
-population = get_population_data("India", "IN")
-col2.image('india')
-col2.write("India")
+population = get_population_data ("Nigeria", "NG")
+col2.image('¡nigeria.png')
+col2.write("Nigeria")
 col2.write(f" Population: {population}")
 
-population = get_population_data("China", "CN")
-col3.image('china.png')
-col3.write("China")
+population = get_population_data ("Indonesia", "ID")
+col3.image('indonesia.png')
+col3.write("Indonesia")
 col3.write(f" Population: {population}")
 
 ###########################################################################################   
