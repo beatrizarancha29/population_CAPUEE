@@ -2,8 +2,10 @@ import requests
 import streamlit as st
 import pandas as pd 
 import numpy as np
+
 from api_connection import get_population_data
 from api_connection import country_data
+import matplotlib
 
 
 base='light'
