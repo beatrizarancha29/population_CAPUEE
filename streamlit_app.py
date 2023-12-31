@@ -6,6 +6,7 @@ import matplotlib.pyplot
 import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
+import pydeck as pdk
 
 base='light'
 backgroundColor ='white'
@@ -94,9 +95,32 @@ st.plotly_chart(fig)
 #######################################################################################################3
 
 # Generate random data for the entire world
-world_data = pd.DataFrame(
-    np.random.randn(1000, 2) * 100,
-    columns=['lat', 'lon'])
+layer = pdk.Layer(
+    "ScatterplotLayer",
+    df,
+    get_position=["lon", "lat"],
+    get_radius="population / 1000000",  # Adjust the scaling factor based on your population data
+    get_fill_color=[255, 0, 0, 140],  # Red color with 140 opacity
+    pickable=True,
+    auto_highlight=True
+)
 
-# Display the map with a wider range of coordinates to cover the whole world
-st.map(world_data)
+# Set the initial view state
+view_state = pdk.ViewState(
+    latitude=0,
+    longitude=0,
+    zoom=1,
+    min_zoom=0,
+    max_zoom=15,
+    pitch=0,
+    bearing=0
+)
+
+# Create a PyDeck deck using the scatterplot layer and view state
+deck = pdk.Deck(
+    layers=[layer],
+    initial_view_state=view_state
+)
+
+# Display the PyDeck chart in Streamlit
+st.pydeck_chart(deck)
