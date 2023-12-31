@@ -45,11 +45,7 @@ population = get_population_data("Canada", "CA")
 st.write("Canada")
 st.write(f" Population: {population}")
 
-#####################################################################################
-populations = []
-for country, iso_code in country_data:
-    population = get_population_data(country, iso_code)
-    populations.append((country, population))
+
 ###########################################################################################   
 st.write("# Population of Countries")
 
@@ -68,9 +64,14 @@ for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
     populations.append(population)
     countries.append(country)
+    
+data = {'Country': countries, 'Population': populations}
+df = pd.DataFrame(data)
+
+# Create a bar chart using Streamlit
+st.bar_chart(df.set_index('Country'))
 
 # Create a bar chart using Matplotlib
-st.bar_chart(dict(zip(countries, populations)))
 #if populations:
     # Create a pie chart using matplotlib
     #fig, ax = plt.subplots()
