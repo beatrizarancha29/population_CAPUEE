@@ -8,9 +8,6 @@ from api_connection import country_data
 
 import matplotlib
 
-
-
-
 base='light'
 backgroundColor ='white'
 st.write("""
@@ -46,27 +43,18 @@ col3.image('china.png')
 col3.write("China")
 col3.write(f" Population: {population}")
 
-##############################################################################
-#population = get_us_population()
-#st.write(f"Population USA: {population}")
-#population = get_population_data("India", "IN")
-#st.write(f" Population: {population}")
-
 #####################################################################################3
 populations = []
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
     populations.append((country, population))
    
-
 st.write("# Population of Countries")
 
 if populations:
     countries, population_values = zip(*populations)
-
     # Use st.bar_chart to display the bar chart
     st.bar_chart(dict(zip(countries, population_values)))
-
 else:
     st.warning("No population data available.")
 
