@@ -93,6 +93,7 @@ fig.update_traces(textinfo='none')  # This line removes the labels
 st.title("Population Distribution by Country")
 st.plotly_chart(fig)
 #######################################################################################################3
+st.title("World Map")
 world_data = pd.DataFrame(
     np.random.randn(1000, 2) * 100,
     columns=['lat', 'lon'])
