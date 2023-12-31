@@ -70,19 +70,9 @@ df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'))
-
-# Create a bar chart using Matplotlib
-#if populations:
-    # Create a pie chart using matplotlib
-    #fig, ax = plt.subplots()
-    #ax.pie(populations, labels=None, autopct='%1.1f%%', startangle=90)
-   # ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
-   # st.pyplot(fig)
-
-    # Optionally, you can add a title
-  #  st.title('Population Distribution Pie Chart')
-#else:
-  # st.warning("No population data available.")
+##################################################################################################
+st.title("Population Distribution by Country")
+st.plotly_chart(figure=px.pie(df, values='Population', names='Country', title='Population Distribution'))
 
 
 
