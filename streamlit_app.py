@@ -63,8 +63,6 @@ if populations:
     # Use st.bar_chart to display the bar chart
     st.bar_chart(dict(zip(countries, population_values)))
 
-    # Optionally, you can add a title and labels using st.write
-
 else:
     st.warning("No population data available.")
 
@@ -97,7 +95,7 @@ if populations:
     st.pyplot(fig)
 
     # Optionally, you can add a title
-st.title('Population Distribution Pie Chart')
+    st.title('Population Distribution Pie Chart')
 else:
    st.warning("No population data available.")
 
