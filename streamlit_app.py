@@ -95,9 +95,10 @@ st.plotly_chart(fig)
 #######################################################################################################3
 st.title("World Map")
 # Generate random data for the entire world
-world_data = pd.DataFrame(
-    np.random.randn(1000, 2) * 100,
-    columns=['lat', 'lon'])
+#world_data = pd.DataFrame(
+    #np.random.randn(1000, 2) * 100,
+    #columns=['lat', 'lon'])
 
 # Assume population data is in the array population
-st.map(world_data,zoom=10)
+#st.map(world_data,zoom=10)
+st.map()
