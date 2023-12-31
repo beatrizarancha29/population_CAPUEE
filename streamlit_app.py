@@ -91,6 +91,20 @@ fig.update_traces(textinfo='none')  # This line removes the labels
 
 st.title("Population Distribution by Country")
 st.plotly_chart(fig)
+#######################################################################################################3
+st.title("Population Distribution Map")
+fig = px.choropleth(df, locations='Country', locationmode='country names', color='Population',
+                    color_continuous_scale='Viridis', title='Population Distribution Map')
+st.plotly_chart(fig)
+
+########################################################################################################3
+st.title("Population Bubble Chart on Map")
+fig = px.scatter_geo(df, locations=countries, locationmode='country names', size='Population',
+                     title='Population Bubble Chart on Map', projection='natural earth')
+fig.update_geos(showcoastlines=True, coastlinecolor="Black", showland=True, landcolor="white")
+st.plotly_chart(fig)
+
+
 
 
 #xxx
