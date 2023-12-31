@@ -41,12 +41,12 @@ col3.image('china.png')
 col3.write("China")
 col3.write(f" Population: {population}")
 
-#####################################################################################3
+#####################################################################################
 populations = []
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
     populations.append((country, population))
-   
+###########################################################################################   
 st.write("# Population of Countries")
 
 if populations:
