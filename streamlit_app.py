@@ -100,4 +100,4 @@ world_data = pd.DataFrame(
 df = pd.DataFrame({'lat': world_data['lat'], 'lon': world_data['lon'], 'population': population})
 
 # Display the bubble chart on the world map
- st.map(world_data, zoom=10)
+st.map(world_data, zoom=10)
