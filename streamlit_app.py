@@ -100,10 +100,4 @@ world_data = pd.DataFrame(
     columns=['lat', 'lon'])
 
 # Assume population data is in the array population
-populations = []
-
-# Create a DataFrame with latitude, longitude, and population columns
-df = pd.DataFrame({'lat': world_data['lat'], 'lon': world_data['lon'], 'population': populations})
-
-# Display the bubble chart on the world map
-st.map(df, use_container_width=True)
+st.map(world_data,zoom=10)
