@@ -2,6 +2,7 @@ import requests
 import streamlit as st
 import pandas as pd 
 import numpy as np
+import geopandas as gpd
 import matplotlib.pyplot
 import plotly.graph_objects as go
 from api_connection import get_population_data
@@ -92,8 +93,15 @@ fig.update_traces(textinfo='none')  # This line removes the labels
 st.title("Population Distribution by Country")
 st.plotly_chart(fig)
 #######################################################################################################3
+# Load world map data with country coordinates
+world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+# Merge the population data with country coordinates
+merged_df = world.merge(df, left_on='iso_a3', right_on='Country')
+
+# Create a bubble chart on a map using Streamlit
 st.title("Population Bubble Chart on Map")
-fig = px.scatter_geo(df, locations=countries, locationmode='country names', size='Population',
+fig = px.scatter_geo(merged_df, locations='iso_a3', size='Population',
                      title='Population Bubble Chart on Map', projection='natural earth')
 fig.update_geos(showcoastlines=True, coastlinecolor="Black", showland=True, landcolor="white")
 st.plotly_chart(fig)
