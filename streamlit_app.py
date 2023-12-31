@@ -70,14 +70,7 @@ for country, iso_code in country_data:
     countries.append(country)
 
 # Create a bar chart using Matplotlib
-fig, ax = plt.subplots()
-ax.bar(countries, populations)
-ax.set_xlabel('Countries')
-ax.set_ylabel('Population')
-ax.set_title('Population Data')
-
-# Display the chart using Streamlit
-st.pyplot(fig)
+st.bar_chart(dict(zip(countries, populations)))
 #if populations:
     # Create a pie chart using matplotlib
     #fig, ax = plt.subplots()
