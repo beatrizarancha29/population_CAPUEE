@@ -55,15 +55,16 @@ st.write("# Population of Countries")
     #st.bar_chart(dict(zip(countries, population_values)))
 #else:
     #st.warning("No population data available.")
-population_dict = dict(populations)
+# Create a bar chart using Matplotlib
 
-# Create a bar chart using Streamlit
-st.bar_chart(population_dict)
+fig, ax = plt.subplots()
+ax.bar(countries, population_values)
+ax.set_xlabel('Countries')
+ax.set_ylabel('Population')
+ax.set_title('Population Data')
 
-# Optionally, you can add labels and a title
-st.xlabel('Countries')
-st.ylabel('Population')
-st.title('Population Data')
+# Display the chart using Streamlit
+st.pyplot(fig)
 ################################################################################################
 
 if populations:
