@@ -98,8 +98,5 @@ world_data = pd.DataFrame(
     np.random.randn(1000, 2) * 100,
     columns=['lat', 'lon'])
 
-# Create a DataFrame with latitude, longitude, and population columns
-df = pd.DataFrame({'lat': world_data['lat'], 'lon': world_data['lon'], 'population': population})
-
-# Display the bubble chart on the world map
-st.map(df, use_container_width=True)
+# Display the map with a wider range of coordinates to cover the whole world
+st.map(world_data)
