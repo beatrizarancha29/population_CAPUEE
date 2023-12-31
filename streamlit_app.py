@@ -22,7 +22,7 @@ st.write("""
 ### World population: 8081718834""" )
 
 st.write( """
-## Countries with the largest population
+## Selected countries
 """)
 
 col1, col2, col3, = st.columns(3)
@@ -93,3 +93,13 @@ st.title("Population Distribution by Country")
 st.plotly_chart(fig)
 #######################################################################################################3
 
+# Generate random data for the entire world
+world_data = pd.DataFrame(
+    np.random.randn(1000, 2) * 100,
+    columns=['lat', 'lon'])
+
+# Create a DataFrame with latitude, longitude, and population columns
+df = pd.DataFrame({'lat': world_data['lat'], 'lon': world_data['lon'], 'population': population})
+
+# Display the bubble chart on the world map
+st.map(df, use_container_width=True)
