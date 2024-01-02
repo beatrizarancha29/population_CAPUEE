@@ -85,7 +85,7 @@ st.bar_chart(df.set_index('Country'))
 st.title("Population Distribution by Country")
 #st.plotly_chart(fig)
 
-st.pie_chart(df.set_index('Country')['Population'])
+st.pie_chart(df.set_index('Country')
 #######################################################################################################3
 st.title("World Map")
 # Generate random data for the entire world
