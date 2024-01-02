@@ -78,12 +78,14 @@ df = pd.DataFrame(data)
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
 # Create a pie chart using Streamlit
-fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
+#fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
 #fig.update_layout(title='Population Distribution by Country')
-fig.update_traces(textinfo='none')  # This line removes the labels
+#fig.update_traces(textinfo='none')  # This line removes the labels
 
 st.title("Population Distribution by Country")
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
+
+st.pie_chart(df.set_index('Country')['Population'])
 #######################################################################################################3
 st.title("World Map")
 # Generate random data for the entire world
