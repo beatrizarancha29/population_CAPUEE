@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot
 #import plotly
-#import plotly.graph_objects as go
+import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -79,9 +79,9 @@ df = pd.DataFrame(data)
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
 # Create a pie chart using Streamlit
-#fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
-#fig.update_layout(title='Population Distribution by Country')
-#fig.update_traces(textinfo='none')  # This line removes the labels
+fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
+fig.update_layout(title='Population Distribution by Country')
+fig.update_traces(textinfo='none')  # This line removes the labels
 
 st.title("Population Distribution by Country")
 #st.plotly_chart(fig)
@@ -94,8 +94,8 @@ st.title("Population Distribution by Country")
 # Display the chart using Streamlit
 #st.plotly_chart(fig)
 
-plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
-plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+#plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
+#plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 # Set chart title
 plt.title('Population Distribution')
@@ -104,13 +104,7 @@ plt.title('Population Distribution')
 st.pyplot()
 #######################################################################################################3
 st.title("World Map")
-# Generate random data for the entire world
-#world_data = pd.DataFrame(
-    #np.random.randn(1000, 2) * 100,
-    #columns=['lat', 'lon'])
 
-# Assume population data is in the array population
-#st.map(world_data,zoom=10)
 st.map()
 ##################################################################################################
 
