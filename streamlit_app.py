@@ -94,15 +94,14 @@ st.title("Population Distribution by Country")
 # Display the chart using Streamlit
 #st.plotly_chart(fig)
 
-fig, ax = plt.subplots()
-ax.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
-ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 # Set chart title
 plt.title('Population Distribution')
 
 # Display the chart using Streamlit
-st.pyplot(fig)
+st.pyplot()
 #######################################################################################################3
 st.title("World Map")
 # Generate random data for the entire world
