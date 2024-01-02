@@ -78,6 +78,17 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
+
+#######################################################################################################3
+st.title("World Map")
+
+st.map()
+##################################################################################################
+
+st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
+
+#############################################################################################################
+
 # Create a pie chart using Streamlit
 fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
 fig.update_layout(title='Population Distribution by Country')
@@ -102,10 +113,3 @@ plt.title('Population Distribution')
 
 # Display the chart using Streamlit
 st.pyplot()
-#######################################################################################################3
-st.title("World Map")
-
-st.map()
-##################################################################################################
-
-st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
