@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot
-import plotly.graph_objects
+import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -62,14 +62,6 @@ col3.write(f" Population: {population}")
 
 ###########################################################################################   
 st.write("# Population of Countries")
-
-#if populations:
-    #countries, population_values = zip(*populations)
-    # Use st.bar_chart to display the bar chart
-    #st.bar_chart(dict(zip(countries, population_values)))
-#else:
-    #st.warning("No population data available.")
-
 ################################################################################################
 populations = []
 countries = []
