@@ -102,3 +102,6 @@ st.title("World Map")
 # Assume population data is in the array population
 #st.map(world_data,zoom=10)
 st.map()
+##################################################################################################
+
+st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah)
