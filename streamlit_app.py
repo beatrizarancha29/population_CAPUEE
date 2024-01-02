@@ -75,7 +75,7 @@ data = {'Country': countries, 'Population': populations}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-st.bar_chart(df.set_index('Country'))
+st.bar_chart(df.set_index('Country')
 ##################################################################################################
 # Create a pie chart using Streamlit
 #fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
