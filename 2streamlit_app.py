@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot
+import plotly
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -94,7 +95,7 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
 st.title("Population Distribution by Country")
 #st.plotly_chart(fig)
 
-st.pie_chart(df.set_index('Country'))
+#st.pie_chart(df.set_index('Country'))
 
 # Create a Pie chart using Plotly Express
 #fig = px.pie(df, names='Country', values='Population', title='Population Distribution')
@@ -106,7 +107,12 @@ st.pie_chart(df.set_index('Country'))
 #plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 # Set chart title
-plt.title('Population Distribution')
+#plt.title('Population Distribution')
 
 # Display the chart using Streamlit
-st.pyplot()
+#st.pyplot()
+
+fig = px.pie(df, values='Population', names='Country', title='Population Distribution by Country')
+
+# Display the pie chart using Streamlit
+st.plotly_chart(fig)
