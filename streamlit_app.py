@@ -89,7 +89,7 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
 
 #############################################################################################################
 
-# Create a pie chart using Streamlit
+# Create a pie chart using Streamli
 #fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
 #fig.update_layout(title='Population Distribution by Country')
 #fig.update_traces(textinfo='none')  # This line removes the labels
