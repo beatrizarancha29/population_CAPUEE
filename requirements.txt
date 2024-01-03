@@ -5,4 +5,4 @@ requests
 matplotlib
 seaborn
 plotly
-plotly.graph_objects as go
+
