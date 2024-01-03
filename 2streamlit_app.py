@@ -83,7 +83,7 @@ st.title("World Map")
 st.map()
 ##################################################################################################
 
-st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
+st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
 #############################################################################################################
 
