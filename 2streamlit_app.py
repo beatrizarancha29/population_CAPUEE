@@ -87,30 +87,7 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
 
 #############################################################################################################
 
-# Create a pie chart using Streamli
-#fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
-#fig.update_layout(title='Population Distribution by Country')
-#fig.update_traces(textinfo='none')  # This line removes the labels
-
 st.title("Population Distribution by Country")
-#st.plotly_chart(fig)
-
-#st.pie_chart(df.set_index('Country'))
-
-# Create a Pie chart using Plotly Express
-#fig = px.pie(df, names='Country', values='Population', title='Population Distribution')
-
-# Display the chart using Streamlit
-#st.plotly_chart(fig)
-
-#plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
-#plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-# Set chart title
-#plt.title('Population Distribution')
-
-# Display the chart using Streamlit
-#st.pyplot()
 
 fig = px.pie(df, values='Population', names='Country', title='Population Distribution by Country')
 
