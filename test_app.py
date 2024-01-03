@@ -1,6 +1,6 @@
 import pandas as pd
 import plotly.express as px
-
+st.write("HELLO")
 data = {'Country': ['A', 'B', 'C'], 'Population': [10, 20, 30]}
 df = pd.DataFrame(data)
 
