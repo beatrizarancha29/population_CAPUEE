@@ -5,4 +5,5 @@ requests
 matplotlib
 seaborn
 plotly
+plotly.express
 
