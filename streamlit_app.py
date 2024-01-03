@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot
 #import plotly
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
 
@@ -90,14 +90,14 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah')
 #############################################################################################################
 
 # Create a pie chart using Streamlit
-fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
-fig.update_layout(title='Population Distribution by Country')
-fig.update_traces(textinfo='none')  # This line removes the labels
+#fig = go.Figure(data=[go.Pie(labels=df['Country'], values=df['Population'])])
+#fig.update_layout(title='Population Distribution by Country')
+#fig.update_traces(textinfo='none')  # This line removes the labels
 
 st.title("Population Distribution by Country")
 #st.plotly_chart(fig)
 
-#st.pie_chart(df.set_index('Country'))
+st.pie_chart(df.set_index('Country'))
 
 # Create a Pie chart using Plotly Express
 #fig = px.pie(df, names='Country', values='Population', title='Population Distribution')
