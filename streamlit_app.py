@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot
 #import plotly
-#import plotly.graph_objects as go
 from api_connection import get_population_data
 from api_connection import country_data
 
