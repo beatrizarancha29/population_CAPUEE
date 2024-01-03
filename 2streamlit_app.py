@@ -89,14 +89,12 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
 st.title("Population Distribution by Country")
 
-df['Population'] = pd.to_numeric(df['Population'], errors='coerce')
-if not df.empty:
-    fig = px.pie(df, values='Population', names='Country', title='Population Distribution by Country')
-else:
-    print("DataFrame is empty.")
+#df['Population'] = pd.to_numeric(df['Population'], errors='coerce')
 
 
-fig = px.pie(df, values='Population', names='Country', title='Population Distribution by Country')
+plt.figure(figsize=(6, 6))
+plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
+plt.title('Population Distribution by Country')
 
-# Display the pie chart using Streamlit
-st.plotly_chart(fig)
+# Display the pie chart in Streamlit
+st.pyplot(plt)
