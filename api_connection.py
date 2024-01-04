@@ -97,7 +97,7 @@ def get_language(country, iso_code):
 
     language_data_json = response.json()
     language = language_data_json.get('languages')
-    
+    return language
     
 for country, iso_code in country_data:
     language = get_language(country, iso_code)
@@ -108,6 +108,7 @@ def get_capital(country, iso_code):
 
     capital_data_json = response.json()
     capital_name = capital_data_json['capital']['name']
+    return capital_name
 
  
 
