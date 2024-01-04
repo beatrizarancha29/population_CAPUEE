@@ -26,6 +26,8 @@ st.write( """
 ## Selected countries
 """)
 
+
+#########################################################################################################################################################
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data("United States", "US")
@@ -101,7 +103,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
-st.write("Area of Counties")
+st.write( "# Area of Counties")
 
 countries = []
 numeric_areas = []
@@ -122,6 +124,18 @@ st.title("World Map")
 
 st.map()
 ##################################################################################################
+
+selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
+numeric_area = get_area(selected_country, selected_iso_code)
+population = get_population_data(selected_country, selected_iso_code)
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+
+st.write(f"Selected Country: {selected_country}")
+st.write(f" Area: {area_in_millions} sq. km")
+st.write(f"Population: {population_in_millions} Million")
+
+
 
 st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
