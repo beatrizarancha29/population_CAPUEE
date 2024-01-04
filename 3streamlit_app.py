@@ -155,13 +155,13 @@ population = get_population_data(selected_country, selected_iso_code)
 language = get_language(selected_country, selected_iso_code)
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
-capital = get_capital(selected_country, selected_iso_code)
+capital_name = get_capital(selected_country, selected_iso_code)
 
 st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
 st.write(f": {language}")
-st.write(f" Capital: {capital}")
+st.write(f" Capital: {capital_name}")
 
 
 
