@@ -128,6 +128,23 @@ st.title("World Map")
 
 st.map()
 ##################################################################################################
+
+population_density = population / numeric_area
+    
+    populations.append(population_density)
+    countries.append(country)
+    areas.append(area)
+
+# Create a DataFrame for population density
+data = {'Country': countries, 'Population Density': populations, 'Area': areas}
+df = pd.DataFrame(data)
+
+# Create a bubble chart using Streamlit
+st.bubble_chart(df.set_index('Country'))
+
+
+
+#####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 numeric_area = get_area(selected_country, selected_iso_code)
