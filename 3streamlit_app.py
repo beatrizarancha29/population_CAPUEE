@@ -124,7 +124,7 @@ st.title("World Map")
 
 st.map()
 ##################################################################################################
-
+selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 numeric_area = get_area(selected_country, selected_iso_code)
 population = get_population_data(selected_country, selected_iso_code)
