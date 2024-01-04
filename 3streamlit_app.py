@@ -135,12 +135,16 @@ populations.append(population_density)
 countries.append(country)
 numeric_areas.append(numeric_area)
 
-# Create a DataFrame for population density
-data = {'Country': countries, 'Population Density': populations, 'Area': numeric_areas}
+data = {'Country': countries, 'Population Density': populations, 'Area': areas}
 df = pd.DataFrame(data)
+# Create a DataFrame for population density
+fig = px.scatter(df, x='Area', y='Population Density', size='Population Density', hover_name='Country',
+                 labels={'Area': 'Area (Square Units)', 'Population Density': 'Population Density'},
+                 title='Population Density Bubble Chart')
 
-# Create a bubble chart using Streamlit
-st.bubble_chart(df.set_index('Country'))
+# Display the Streamlit app
+st.write("# Population Density Bubble Chart")
+st.plotly_chart(fig))
 
 
 
