@@ -102,10 +102,21 @@ df = pd.DataFrame(data)
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
 st.write("Area of Counties")
-#areas = []
-#for country, iso_code in country_data:
 
+countries = []
+numeric_areas = []
 
+# Fetch data and store in lists
+for country, iso_code in country_data:
+    numeric_area = get_area(country, iso_code)
+    countries.append(country)
+    numeric_areas.append(numeric_area)
+    
+data = {'Country': countries, 'Area': numeric_areas}
+df = pd.DataFrame(data)
+
+# Create a bar chart using Streamlit
+st.bar_chart(df.set_index('Country'))
 #######################################################################################################3
 st.title("World Map")
 
