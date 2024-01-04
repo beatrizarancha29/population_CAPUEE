@@ -35,7 +35,7 @@ col1.write("USA")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col1.write(f" Population: {population_in_millions:.2f} Million")
-col1.write(f"Area:{area_in_millions} Million sq. km")
+col1.write(f"Area: {area_in_millions} Million sq. km")
 
 
 population = get_population_data("India", "IN")
@@ -45,7 +45,7 @@ col2.write("India")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col2.write(f" Population: {population_in_millions:.2f} Million")
-col2.write(f"Area:{area_in_millions} Million sq. km")
+col2.write(f"Area: {area_in_millions} Million sq. km")
 
 population = get_population_data("China", "CN")
 numeric_area = get_area("China", "CN")
@@ -54,7 +54,7 @@ col3.write("China")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
-col3.write(f"Area:{area_in_millions} Million sq. km")
+col3.write(f"Area: {area_in_millions} Million sq. km")
 
 col1, col2, col3, = st.columns(3)
 
@@ -64,7 +64,7 @@ col1.write("Brazil")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col1.write(f" Population: {population_in_millions:.2f} Million")
-col1.write(f"Area:{area_in_millions} Million sq. km")
+col1.write(f"Area: {area_in_millions} Million sq. km")
 
 
 population = get_population_data ("Nigeria", "NG")
@@ -74,7 +74,7 @@ col2.write(f" Population: {population} Million")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col2.write(f" Population: {population_in_millions:.2f} Million")
-col2.write(f"Area:{area_in_millions} Million sq. km")
+col2.write(f"Area: {area_in_millions} Million sq. km")
 
 population = get_population_data ("Indonesia", "ID")
 col3.image('indonesia.png')
@@ -82,7 +82,7 @@ col3.write("Indonesia")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
-col3.write(f"Area:{area_in_millions} Million sq. km")
+col3.write(f"Area: {area_in_millions} Million sq. km")
 
 ###########################################################################################   
 st.write("# Population of Countries")
