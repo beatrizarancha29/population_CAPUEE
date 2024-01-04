@@ -88,10 +88,11 @@ def get_area(country, iso_code):
 
     area_data_json = response.json()
     area = area_data_json.get('area_size')
-    return area
+    numeric_area = int(re.search(r'\d+', area).group())
+    return numeric_area
     
 for country, iso_code in country_data:
-    area = get_area(country, iso_code)
+    numeric_area = get_area(country, iso_code)
 
 
 
