@@ -138,15 +138,16 @@ numeric_areas.append(numeric_area)
 data = {'Country': countries, 'Population Density': populations, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 # Create a DataFrame for population density
-fig = px.scatter(df, x='Area', y='Population Density', size='Population Density', hover_name='Country',
-                 labels={'Area': 'Area (Square Units)', 'Population Density': 'Population Density'},
-                 title='Population Density Bubble Chart')
+#fig = px.scatter(df, x='Area', y='Population Density', 
 
 # Display the Streamlit app
 st.write("# Population Density Bubble Chart")
 st.plotly_chart(fig)
 
-
+fig = go.Figure(data=[go.Scatter(
+    x='Area', y='Population Density',size='Population Density', hover_name='Country',
+                 labels={'Area': 'Area (Square Units)', 'Population Density': 'Population Density'},
+                 title='Population Density Bubble Chart')
 
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
