@@ -102,6 +102,12 @@ def get_language(country, iso_code):
 for country, iso_code in country_data:
     language = get_language(country, iso_code)
 
+def get_capital(country, iso_code):
+    url = url_base + iso_code
+    response = requests.get(url, headers=headers)
 
+    capital_data_json = response.json()
+    capital_name = capital_data_json['capital']['name']
 
+ 
 
