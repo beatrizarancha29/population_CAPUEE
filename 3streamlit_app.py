@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as po
 from api_connection import get_population_data
+from api_connection import get_area
 from api_connection import country_data
 
 base='light'
@@ -31,16 +32,19 @@ population = get_population_data("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
 col1.write(f" Population: {population/1000000} Million ")
+col1.write(f"Area:¨{area}")
 
 population = get_population_data("India", "IN")
 col2.image('india')
 col2.write("India")
 col2.write(f" Population: {population/1000000} Million")
+col2.write(f"Area:¨{area}")
 
 population = get_population_data("China", "CN")
 col3.image('china.png')
 col3.write("China")
 col3.write(f" Population: {population/1000000} Million")
+col3.write(f"Area:¨{area}")
 
 col1, col2, col3, = st.columns(3)
 
@@ -76,6 +80,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
+st.write("Area of Counties")
 
 #######################################################################################################3
 st.title("World Map")
