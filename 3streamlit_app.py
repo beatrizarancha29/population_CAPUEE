@@ -7,6 +7,7 @@ import plotly.express as po
 from api_connection import get_population_data
 from api_connection import get_area
 from api_connection import country_data
+from api_connection import get_language
 
 base='light'
 backgroundColor ='white'
@@ -144,23 +145,20 @@ df = pd.DataFrame(data)
 st.write("# Population Density Bubble Chart")
 
 
-fig = go.Figure(data=[go.Scatter(
-    x='Area', y='Population Density',size='Population Density', hover_name='Country',
-                 labels={'Area': 'Area (Square Units)', 'Population Density': 'Population Density'},
-                 title='Population Density Bubble Chart')])
 
-st.plotly_chart(fig)
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 numeric_area = get_area(selected_country, selected_iso_code)
 population = get_population_data(selected_country, selected_iso_code)
+language = get_language(selected_country, selected_iso_code)
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 
 st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
+st.write({language})
 
 
 
