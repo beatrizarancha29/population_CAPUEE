@@ -142,13 +142,14 @@ df = pd.DataFrame(data)
 
 # Display the Streamlit app
 st.write("# Population Density Bubble Chart")
-st.plotly_chart(fig)
+
 
 fig = go.Figure(data=[go.Scatter(
     x='Area', y='Population Density',size='Population Density', hover_name='Country',
                  labels={'Area': 'Area (Square Units)', 'Population Density': 'Population Density'},
                  title='Population Density Bubble Chart')])
 
+st.plotly_chart(fig)
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
