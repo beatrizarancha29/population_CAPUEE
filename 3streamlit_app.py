@@ -135,7 +135,7 @@ populations.append(population_density)
 countries.append(country)
 numeric_areas.append(numeric_area)
 
-data = {'Country': countries, 'Population Density': populations, 'Area': areas}
+data = {'Country': countries, 'Population Density': populations, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 # Create a DataFrame for population density
 fig = px.scatter(df, x='Area', y='Population Density', size='Population Density', hover_name='Country',
