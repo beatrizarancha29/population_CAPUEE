@@ -19,7 +19,7 @@ col2.image('flags.jpg')
 col3.image('people.jpg')
 st.write("""
 
-### World population: 8081718834""" )
+### World population: 8.1 Billion""" )
 
 st.write( """
 ## Selected countries
@@ -30,34 +30,34 @@ col1, col2, col3, = st.columns(3)
 population = get_population_data("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
-col1.write(f" Population: {population}")
+col1.write(f" Population: {population/1000000} Million ")
 
 population = get_population_data("India", "IN")
 col2.image('india')
 col2.write("India")
-col2.write(f" Population: {population}")
+col2.write(f" Population: {population/1000000} Million")
 
 population = get_population_data("China", "CN")
 col3.image('china.png')
 col3.write("China")
-col3.write(f" Population: {population}")
+col3.write(f" Population: {population/1000000} Million")
 
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data ("Brazil", "BR")
 col1.image('brazil.png')
 col1.write("Brazil")
-col1.write(f" Population: {population}")
+col1.write(f" Population: {population/1000000} Million")
 
 population = get_population_data ("Nigeria", "NG")
 col2.image('¡nigeria.png')
 col2.write("Nigeria")
-col2.write(f" Population: {population}")
+col2.write(f" Population: {population/1000000} Million")
 
 population = get_population_data ("Indonesia", "ID")
 col3.image('indonesia.png')
 col3.write("Indonesia")
-col3.write(f" Population: {population}")
+col3.write(f" Population: {population/1000000} Million")
 
 ###########################################################################################   
 st.write("# Population of Countries")
@@ -87,14 +87,4 @@ st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
 #############################################################################################################
 
-st.title("Population Distribution by Country")
 
-#df['Population'] = pd.to_numeric(df['Population'], errors='coerce')
-
-
-plt.figure(figsize=(6, 6))
-plt.pie(df['Population'], labels=df['Country'], autopct='%1.1f%%', startangle=90)
-plt.title('Population Distribution by Country')
-
-# Display the pie chart in Streamlit
-st.pyplot(plt)
