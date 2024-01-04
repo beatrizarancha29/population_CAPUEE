@@ -32,7 +32,7 @@ population = get_population_data("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
 col1.write(f" Population: {population} Million ")
-col1.write(f"Area:{area}")
+col1.write(f"Area: {area}")
 
 population = get_population_data("India", "IN")
 col2.image('india')
