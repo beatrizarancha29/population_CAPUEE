@@ -131,12 +131,12 @@ st.map()
 
 population_density = population / numeric_area
     
-    populations.append(population_density)
-    countries.append(country)
-    areas.append(area)
+populations.append(population_density)
+countries.append(country)
+numeric_areas.append(numeric_area)
 
 # Create a DataFrame for population density
-data = {'Country': countries, 'Population Density': populations, 'Area': areas}
+data = {'Country': countries, 'Population Density': populations, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 
 # Create a bubble chart using Streamlit
