@@ -8,6 +8,7 @@ from api_connection import get_population_data
 from api_connection import get_area
 from api_connection import country_data
 from api_connection import get_language
+from api_connection import get_capital
 
 base='light'
 backgroundColor ='white'
@@ -142,7 +143,7 @@ df = pd.DataFrame(data)
 #fig = px.scatter(df, x='Area', y='Population Density', 
 
 # Display the Streamlit app
-st.write("# Population Density Bubble Chart")
+#st.write("# Population Density Bubble Chart")
 
 
 
@@ -154,11 +155,13 @@ population = get_population_data(selected_country, selected_iso_code)
 language = get_language(selected_country, selected_iso_code)
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
+capital = get_capital(selected_country, selected_iso_code)
 
 st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
-st.write({language})
+st.write(f": {language}")
+st.write(f" Capital: {capital}")
 
 
 
