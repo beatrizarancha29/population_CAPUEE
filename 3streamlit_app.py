@@ -29,42 +29,42 @@ st.write( """
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data("United States", "US")
-area = get_area("United States", "US")
+numeric_area = get_area("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
 #col1.write(f" Population: {population}")
-col1.write(f"Area: {area} ")
+col1.write(f"Area: {numeric_area} ")
 
 population = get_population_data("India", "IN")
-area = get_area("India", "IN")
+numeric_area = get_area("India", "IN")
 col2.image('india')
 col2.write("India")
 col2.write(f" Population: {population} Million")
-col2.write(f"Area:{area}")
+col2.write(f"Area:{numeric_area}")
 
 population = get_population_data("China", "CN")
-area = get_area("China", "CN")
+numeric_area = get_area("China", "CN")
 col3.image('china.png')
 col3.write("China")
 col3.write(f" Population: {population} Million")
-col3.write(f"Area:{area}")
+col3.write(f"Area:{numeric_area}")
 
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data ("Brazil", "BR")
 col1.image('brazil.png')
 col1.write("Brazil")
-col1.write(f" Population: {population/1000000} Million")
+col1.write(f" Population: {population} Million")
 
 population = get_population_data ("Nigeria", "NG")
 col2.image('¡nigeria.png')
 col2.write("Nigeria")
-col2.write(f" Population: {population/1000000} Million")
+col2.write(f" Population: {population} Million")
 
 population = get_population_data ("Indonesia", "ID")
 col3.image('indonesia.png')
 col3.write("Indonesia")
-col3.write(f" Population: {population/1000000} Million")
+col3.write(f" Population: {population} Million")
 
 ###########################################################################################   
 st.write("# Population of Countries")
