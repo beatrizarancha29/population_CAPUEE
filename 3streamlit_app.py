@@ -31,7 +31,7 @@ col1, col2, col3, = st.columns(3)
 population = get_population_data("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
-col1.write(f" Population: {population/(1000000)}")
+col1.write(f" Population: {population}")
 col1.write(f"Area: {area} ")
 
 population = get_population_data("India", "IN")
