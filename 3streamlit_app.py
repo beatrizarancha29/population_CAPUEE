@@ -32,39 +32,57 @@ population = get_population_data("United States", "US")
 numeric_area = get_area("United States", "US")
 col1.image('usa.png')
 col1.write("USA")
-#col1.write(f" Population: {population}")
-col1.write(f"Area: {numeric_area} ")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col1.write(f" Population: {population_in_millions:.2f} Million")
+col1.write(f"Area:{area_in_millions} Million sq. km")
+
 
 population = get_population_data("India", "IN")
 numeric_area = get_area("India", "IN")
 col2.image('india')
 col2.write("India")
-col2.write(f" Population: {population} Million")
-col2.write(f"Area:{numeric_area}")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col2.write(f" Population: {population_in_millions:.2f} Million")
+col2.write(f"Area:{area_in_millions} Million sq. km")
 
 population = get_population_data("China", "CN")
 numeric_area = get_area("China", "CN")
 col3.image('china.png')
 col3.write("China")
-col3.write(f" Population: {population} Million")
-col3.write(f"Area:{numeric_area}")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col3.write(f" Population: {population_in_millions:.2f} Million")
+col3.write(f"Area:{area_in_millions} Million sq. km")
 
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data ("Brazil", "BR")
 col1.image('brazil.png')
 col1.write("Brazil")
-col1.write(f" Population: {population} Million")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col1.write(f" Population: {population_in_millions:.2f} Million")
+col1.write(f"Area:{area_in_millions} Million sq. km")
+
 
 population = get_population_data ("Nigeria", "NG")
 col2.image('¡nigeria.png')
 col2.write("Nigeria")
 col2.write(f" Population: {population} Million")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col2.write(f" Population: {population_in_millions:.2f} Million")
+col2.write(f"Area:{area_in_millions} Million sq. km")
 
 population = get_population_data ("Indonesia", "ID")
 col3.image('indonesia.png')
 col3.write("Indonesia")
-col3.write(f" Population: {population} Million")
+population_in_millions = population / 1000000
+area_in_millions = numeric_area/100000
+col3.write(f" Population: {population_in_millions:.2f} Million")
+col3.write(f"Area:{area_in_millions} Million sq. km")
 
 ###########################################################################################   
 st.write("# Population of Countries")
@@ -84,6 +102,9 @@ df = pd.DataFrame(data)
 st.bar_chart(df.set_index('Country'))
 ##################################################################################################
 st.write("Area of Counties")
+#areas = []
+#for country, iso_code in country_data:
+
 
 #######################################################################################################3
 st.title("World Map")
