@@ -144,7 +144,7 @@ fig = px.scatter(df, x='Area', y='Population Density', size='Population Density'
 
 # Display the Streamlit app
 st.write("# Population Density Bubble Chart")
-st.plotly_chart(fig))
+st.plotly_chart(fig)
 
 
 
