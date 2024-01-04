@@ -81,3 +81,17 @@ def get_population_data(country, iso_code):
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
 
+
+#def get_area(country, iso_code):
+    #url = url_base + iso_code
+    #response = requests.get(url, headers=headers)
+
+    #area_data_json = response.json()
+    #area = area_data_json.get('area_size')
+    #return area
+    
+#for country, iso_code in country_data:
+    #area = get_area(country, iso_code)
+
+
+
