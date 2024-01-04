@@ -11,8 +11,12 @@ from api_connection import country_data
 base='light'
 backgroundColor ='white'
 st.write("""
-# Simple Population Web App 
+# Country Data Web App 
 """)
+
+st.write(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
+
+
 col1, col2, col3, = st.columns(3)
 # Display the images in the columns
 col1.image('worldimage.jpg')
@@ -134,6 +138,8 @@ area_in_millions = numeric_area/100000
 st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
+
+
 
 
 
