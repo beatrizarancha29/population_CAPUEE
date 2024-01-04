@@ -90,9 +90,17 @@ def get_area(country, iso_code):
     area = area_data_json.get('area_size')
     numeric_area = int(re.search(r'\d+', area).group())
     return numeric_area
+
+def get_language(country, iso_code):
+    url = url_base + iso_code
+    response = requests.get(url, headers=headers)
+
+    language_data_json = response.json()
+    language = language_data_json.get('languages')
+    
     
 for country, iso_code in country_data:
-    numeric_area = get_area(country, iso_code)
+    language = get_language(country, iso_code)
 
 
 
