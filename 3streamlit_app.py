@@ -130,9 +130,10 @@ st.bar_chart(df.set_index('Country'), color="#FF0000")
 
 ##################################################################################################
 densities = []
-#countries = []
-#populations = []
-#countries = []
+countries = []
+populations = []
+countries = []
+numeric_areas[]
 
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
@@ -145,7 +146,7 @@ for country, iso_code in country_data:
     
     densities.append(density)
 
-data = {'Country': countries, 'Density': densities, 'Area': numeric_areas, 'Population':populations}
+data = {'Area': numeric_areas,'Density': densities, 'Population':populations, 'Country': countries}
 df = pd.DataFrame(data)
 
 st.write("# Population Density Bubble Chart")
