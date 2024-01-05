@@ -114,22 +114,6 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'), color="#00FF00")
 #####################################################################################################################
-populations = []
-countries = []
-iso_codes =[]
-
-for country, iso_code in country_data:
-    population = get_population_data(country, iso_code)
-    populations.append(population)
-    countries.append(country)
-    iso_codes.append(iso_code)
-
-data = {'iso_code': iso_codes, 'Country': countries, 'Population': populations}
-df = pd.DataFrame(data)
-
-fig = px.scatter_geo(df, locations="iso_code",
-                     hover_name="Coountry", size="Population",
-                     projection="natural earth")
 ##################################################################################################
 st.write( "# Area of Countries")
 
