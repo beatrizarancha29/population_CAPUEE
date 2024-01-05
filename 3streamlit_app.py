@@ -108,13 +108,13 @@ col3.write(f" Population: {population_in_millions:.2f} Million")
 col3.write(f"Area: {area_in_millions} Million sq. km")
 
 
-st.toast('The world ...', icon=🌎)
+st.toast('The world ...',)
 time.sleep(.5)
-st.toast('... is like a book', icon=📚)
+st.toast('... is like a book',)
 time.sleep(.5)
-st.toast('Who doesn´t travel...',icon=✈️)
+st.toast('Who doesn´t travel...')
 time.sleep(.5)
-st.toast('... only reads the first page', icon='💫')
+st.toast('... only reads the first page')
 
 
 ###########################################################################################   
