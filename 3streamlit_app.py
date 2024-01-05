@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-import plotly.express as po
+import plotly.express as px
 from api_connection import get_population_data
 from api_connection import get_area
 from api_connection import country_data
@@ -28,23 +28,21 @@ st.write("""
 
 ### World population: 8.1 Billion""" )
 
+#########################################################################################################################################################
 st.write( """
-## Selected countries
+## Top 3 most populous countries
 """)
 
-
-#########################################################################################################################################################
 col1, col2, col3, = st.columns(3)
 
-population = get_population_data("United States", "US")
-numeric_area = get_area("United States", "US")
-col1.image('usa.png')
-col1.write("USA")
+population = get_population_data("China", "CN")
+numeric_area = get_area("China", "CN")
+col1.image('china.png')
+col1.write("China")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col1.write(f" Population: {population_in_millions:.2f} Million")
 col1.write(f"Area: {area_in_millions} Million sq. km")
-
 
 population = get_population_data("India", "IN")
 numeric_area = get_area("India", "IN")
@@ -55,38 +53,41 @@ area_in_millions = numeric_area/100000
 col2.write(f" Population: {population_in_millions:.2f} Million")
 col2.write(f"Area: {area_in_millions} Million sq. km")
 
-population = get_population_data("China", "CN")
-numeric_area = get_area("China", "CN")
-col3.image('china.png')
-col3.write("China")
+population = get_population_data("United States", "US")
+numeric_area = get_area("United States", "US")
+col3.image('usa.png')
+col3.write("USA")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
 col3.write(f"Area: {area_in_millions} Million sq. km")
 
+st.write( """
+## Top 3 largest countries
+""")
+
 col1, col2, col3, = st.columns(3)
 
-population = get_population_data ("Brazil", "BR")
-col1.image('brazil.png')
-col1.write("Brazil")
+population = get_population_data ("Russia", "RU")
+col3.image('Flag_of_Russia.svg')
+col3.write("Russia")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
-col1.write(f" Population: {population_in_millions:.2f} Million")
-col1.write(f"Area: {area_in_millions} Million sq. km")
+col3.write(f" Population: {population_in_millions:.2f} Million")
+col3.write(f"Area: {area_in_millions} Million sq. km")
 
-
-population = get_population_data ("Nigeria", "NG")
-col2.image('¡nigeria.png')
-col2.write("Nigeria")
+population = get_population_data ("Canada", "CA")
+col2.image('canada')
+col2.write("Canada")
 col2.write(f" Population: {population} Million")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col2.write(f" Population: {population_in_millions:.2f} Million")
 col2.write(f"Area: {area_in_millions} Million sq. km")
 
-population = get_population_data ("Indonesia", "ID")
-col3.image('indonesia.png')
-col3.write("Indonesia")
+population = get_population_data ("Brazil", "BR")
+col3.image('brazil.png')
+col3.write("Brazil")
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
@@ -107,7 +108,7 @@ data = {'Country': countries, 'Population': populations}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-st.bar_chart(df.set_index('Country'))
+st.bar_chart(df.set_index('Country'), color="#00FF00")
 ##################################################################################################
 st.write( "# Area of Counties")
 
@@ -124,46 +125,57 @@ data = {'Country': countries, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-st.bar_chart(df.set_index('Country'))
+st.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
-st.title("World Map")
 
-st.map()
 ##################################################################################################
 
-population_density = population / numeric_area
+densities[]
+
+for country, iso_code in country_data:
+    density = population / numeric_area
+    densities.append(density)
     
-populations.append(population_density)
+populations.append(population)
 countries.append(country)
 numeric_areas.append(numeric_area)
+densities.append(density)
 
-data = {'Country': countries, 'Population Density': populations, 'Area': numeric_areas}
+data = {'Country': countries, 'Density': densities, 'Area': numeric_areas, 'Population':populations}
 df = pd.DataFrame(data)
-# Create a DataFrame for population density
-#fig = px.scatter(df, x='Area', y='Population Density', 
 
-# Display the Streamlit app
-#st.write("# Population Density Bubble Chart")
+st.write("# Population Density Bubble Chart")
 
-
+fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country', log_x=True)
+fig.show()
 
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
+
 numeric_area = get_area(selected_country, selected_iso_code)
 population = get_population_data(selected_country, selected_iso_code)
-language = get_language(selected_country, selected_iso_code)
+population_density = population / numeric_area
+
 population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
+
+language = get_language(selected_country, selected_iso_code)
 capital_name = get_capital(selected_country, selected_iso_code)
+
 
 st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
+st.write(f"Density: {population_density} People per sq km")
 st.write(f": {language}")
 st.write(f" Capital: {capital_name}")
+############################################################################################################3
 
 
+st.title("World Map")
+
+st.map()
 
 
 
