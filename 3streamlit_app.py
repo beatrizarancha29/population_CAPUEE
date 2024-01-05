@@ -107,11 +107,29 @@ for country, iso_code in country_data:
     populations.append(population)
     countries.append(country)
     
+    
 data = {'Country': countries, 'Population': populations}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'), color="#00FF00")
+#####################################################################################################################
+populations = []
+countries = []
+iso_codes =[]
+
+for country, iso_code in country_data:
+    population = get_population_data(country, iso_code)
+    populations.append(population)
+    countries.append(country)
+    iso_codes.append(iso_code)
+
+data = {'iso_code': iso_codes, 'Country': countries, 'Population': populations}
+df = pd.DataFrame(data)
+
+fig = px.scatter_geo(df, locations="iso_code",
+                     hover_name="Coountry", size="Population",
+                     projection="natural earth")
 ##################################################################################################
 st.write( "# Area of Countries")
 
@@ -160,6 +178,14 @@ st.plotly_chart(fig, use_container_width=True)
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
+
+selected_country = st.text_input('Enter the desired country:', country_data[0][0])
+
+# Check if the entered country is in the list
+if selected_country not in [country[0] for country in country_data]:
+    st.warning("Please enter a valid country.")
+else:
+    selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
 numeric_area = get_area(selected_country, selected_iso_code)
 population = get_population_data(selected_country, selected_iso_code)
