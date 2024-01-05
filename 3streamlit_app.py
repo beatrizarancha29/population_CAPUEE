@@ -29,6 +29,12 @@ st.write("""
 
 st.write(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
 
+import streamlit as st
+
+gif_file_path = 'world_gif.gif'
+
+# Display the GIF
+st.image(gif_file_path, use_column_width=True)
 
 col1, col2, col3, = st.columns(3)
 # Display the images in the columns
@@ -216,7 +222,7 @@ st.toast('... means ...')
 time.sleep(.5)
 st.toast('...a different version...')
 time.sleep(.5)
-st.toast('... of life)
+st.toast('... of life')
 
 
 ############################################################################################################3
