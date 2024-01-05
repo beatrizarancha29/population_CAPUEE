@@ -69,6 +69,7 @@ st.write( """
 col1, col2, col3, = st.columns(3)
 
 population = get_population_data ("Russia", "RU")
+numeric_area = get_area("Russia", "RU")
 col1.image('Flag_of_Russia.svg.png')
 col1.write("Russia")
 population_in_millions = population / 1000000
@@ -77,6 +78,7 @@ col1.write(f" Population: {population_in_millions:.2f} Million")
 col1.write(f"Area: {area_in_millions} Million sq. km")
 
 population = get_population_data ("Canada", "CA")
+numeric_area = get_area("Canada", "CA")
 col2.image('canada.png')
 col2.write("Canada")
 col2.write(f" Population: {population} Million")
@@ -86,6 +88,7 @@ col2.write(f" Population: {population_in_millions:.2f} Million")
 col2.write(f"Area: {area_in_millions} Million sq. km")
 
 population = get_population_data ("Brazil", "BR")
+numeric_area = get_area("Brazil", "BR")
 col3.image('brazil.png')
 col3.write("Brazil")
 population_in_millions = population / 1000000
@@ -170,7 +173,7 @@ capital_name = get_capital(selected_country, selected_iso_code)
 
 
 st.write(f"Selected Country: {selected_country}")
-st.write(f" Area: {area_in_millions} sq. km")
+st.write(f" Area: {area_in_millions} Million sq. km")
 st.write(f"Population: {population_in_millions} Million")
 st.write(f"Density: {population_density} People per sq km")
 st.write(f"Languag(es): {language}")
