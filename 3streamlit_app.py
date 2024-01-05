@@ -129,8 +129,7 @@ st.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
 ##################################################################################################
-
-densities[]
+densities = []
 
 for country, iso_code in country_data:
     density = population / numeric_area
@@ -171,13 +170,9 @@ st.write(f"Density: {population_density} People per sq km")
 st.write(f": {language}")
 st.write(f" Capital: {capital_name}")
 ############################################################################################################3
-
-
 st.title("World Map")
 
 st.map()
-
-
 
 st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
