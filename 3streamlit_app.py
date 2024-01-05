@@ -38,9 +38,9 @@ st.image(gif_file_path, use_column_width=True)
 
 col1, col2, col3, = st.columns(3)
 # Display the images in the columns
-col1.image('worldimage.jpg')
-col2.image('flags.jpg')
-col3.image('people.jpg')
+#col1.image('worldimage.jpg')
+#col2.image('flags.jpg')
+#col3.image('people.jpg')
 st.write("""
 
 ### World population: 8.1 Billion""" )
@@ -115,11 +115,11 @@ col3.write(f"Area: {area_in_millions} Million sq. km")
 
 
 st.toast('The world ...',)
-time.sleep(.5)
+time.sleep(.9)
 st.toast('... is like a book',)
-time.sleep(.5)
+time.sleep(.9)
 st.toast('Who doesn´t travel...')
-time.sleep(.5)
+time.sleep(.9)
 st.toast('... only reads the first page')
 
 
@@ -192,11 +192,6 @@ selected_iso_code = [country[1] for country in country_data if country[0] == sel
 
 selected_country = st.text_input('Enter the desired country:', country_data[0][0])
 
-# Check if the entered country is in the list
-if selected_country not in [country[0] for country in country_data]:
-    st.warning("Please enter a valid country.")
-else:
-    selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
 numeric_area = get_area(selected_country, selected_iso_code)
 population = get_population_data(selected_country, selected_iso_code)
@@ -217,11 +212,11 @@ st.write(f"Languag(es): {language}")
 st.write(f" Capital: {capital_name}")
 
 st.toast('A different language...')
-time.sleep(.5)
+time.sleep(.9)
 st.toast('... means ...')
-time.sleep(.5)
+time.sleep(.9)
 st.toast('...a different version...')
-time.sleep(.5)
+time.sleep(.9)
 st.toast('... of life')
 
 
@@ -229,13 +224,10 @@ st.toast('... of life')
 st.title("World Map")
 
 st.map()
-       
-st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
+if st.button("I learned evertything I wanted to know about countries"):
+    st.balloons()       
 
-
-         
-st.balloons() 
 #############################################################################################################
 
 
