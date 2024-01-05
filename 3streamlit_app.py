@@ -130,15 +130,20 @@ st.bar_chart(df.set_index('Country'), color="#FF0000")
 
 ##################################################################################################
 densities = []
+#countries = []
+#populations = []
+#countries = []
 
 for country, iso_code in country_data:
+    population = get_population_data(country, iso_code)
+    numeric_area = get_area(country, iso_code)
     density = population / numeric_area
-    densities.append(density)
     
-populations.append(population)
-countries.append(country)
-numeric_areas.append(numeric_area)
-densities.append(density)
+    countries.append(country)
+    numeric_areas.append(numeric_area)
+    populations.append(population)
+    
+    densities.append(density)
 
 data = {'Country': countries, 'Density': densities, 'Area': numeric_areas, 'Population':populations}
 df = pd.DataFrame(data)
