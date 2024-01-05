@@ -110,7 +110,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'), color="#00FF00")
 ##################################################################################################
-st.write( "# Area of Counties")
+st.write( "# Area of Countries")
 
 countries = []
 numeric_areas = []
@@ -150,7 +150,7 @@ df = pd.DataFrame(data)
 
 st.write("# Population Density Bubble Chart")
 
-fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country', log_x=True)
+fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country',)
 st.plotly_chart(fig, use_container_width=True)
 
 #####################################################################################################
