@@ -133,7 +133,7 @@ densities = []
 countries = []
 populations = []
 countries = []
-numeric_areas[]
+numeric_areas = []
 
 for country, iso_code in country_data:
     population = get_population_data(country, iso_code)
