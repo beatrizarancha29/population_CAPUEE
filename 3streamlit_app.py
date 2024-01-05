@@ -146,7 +146,7 @@ df = pd.DataFrame(data)
 st.write("# Population Density Bubble Chart")
 
 fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country', log_x=True)
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
@@ -167,7 +167,7 @@ st.write(f"Selected Country: {selected_country}")
 st.write(f" Area: {area_in_millions} sq. km")
 st.write(f"Population: {population_in_millions} Million")
 st.write(f"Density: {population_density} People per sq km")
-st.write(f": {language}")
+st.write(f"Languag(es): {language}")
 st.write(f" Capital: {capital_name}")
 ############################################################################################################3
 st.title("World Map")
