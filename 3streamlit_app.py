@@ -9,6 +9,17 @@ from api_connection import get_area
 from api_connection import country_data
 from api_connection import get_language
 from api_connection import get_capital
+import time
+
+with st.status("Downloading data...", expanded=True) as status:
+    st.write("Searching for data...")
+    time.sleep(2)
+    st.write("Found URL.")
+    time.sleep(1)
+    st.write("Downloading data...")
+    time.sleep(1)
+    status.update(label="Data download complete!", state="complete", expanded=False)
+
 
 base='light'
 backgroundColor ='white'
@@ -95,6 +106,16 @@ population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
 col3.write(f"Area: {area_in_millions} Million sq. km")
+
+
+st.toast('The world ...', icon=🌎)
+time.sleep(.5)
+st.toast('... is like a book', icon=📚)
+time.sleep(.5)
+st.toast('Who doesn´t travel...',icon=✈️)
+time.sleep(.5)
+st.toast('... only reads the first page', icon='💫')
+
 
 ###########################################################################################   
 st.write("# Population of Countries")
@@ -188,13 +209,27 @@ st.write(f"Population: {population_in_millions} Million")
 st.write(f"Density: {population_density} People per sq km")
 st.write(f"Languag(es): {language}")
 st.write(f" Capital: {capital_name}")
+
+st.toast('A different language...')
+time.sleep(.5)
+st.toast('... means ...')
+time.sleep(.5)
+st.toast('...a different version...')
+time.sleep(.5)
+st.toast('... of life)
+
+
 ############################################################################################################3
 st.title("World Map")
 
 st.map()
-
+       
 st.write('Made by Beatriz Garcia, Oscar Arenas and Abdullah Rashed')
 
+
+
+         
+st.balloons() 
 #############################################################################################################
 
 
