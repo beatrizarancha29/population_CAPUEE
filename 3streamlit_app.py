@@ -22,12 +22,12 @@ with st.status("Downloading data...", expanded=True) as status:
 
 
 base='light'
-backgroundColor ='white'
+backgroundColor ='blue'
 st.write("""
 # Country Data Web App 
 """)
 
-st.text_area)(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
+st.text_area(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
 
 import streamlit as st
 
