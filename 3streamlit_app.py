@@ -123,7 +123,7 @@ time.sleep(.9)
 st.toast('... only reads the first page')
 
 ###########################################################################################   
-st.write("# Population of Countries")
+col1, col2, = st.columns(2)
 
 populations = []
 countries = []
@@ -138,10 +138,9 @@ data = {'Country': countries, 'Population': populations}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-st.bar_chart(df.set_index('Country'), color="#00FF00")
+col1.write("# Population of Countries")
+col1.bar_chart(df.set_index('Country'), color="#00FF00")
 #####################################################################################################################
-
-st.write( "# Area of Countries")
 
 countries = []
 numeric_areas = []
@@ -156,23 +155,24 @@ data = {'Country': countries, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-st.bar_chart(df.set_index('Country'), color="#FF0000")
+col2.st.write( "# Area of Countries")
+col2.st.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
 densities = []
-#countries = []
-#populations = []
-#countries = []
-#numeric_areas = []
+countries = []
+populations = []
+countries = []
+numeric_areas = []
 
 for country, iso_code in country_data:
-    #population = get_population_data(country, iso_code)
-    #numeric_area = get_area(country, iso_code)
+    population = get_population_data(country, iso_code)
+    numeric_area = get_area(country, iso_code)
     density = population / numeric_area
     
-    #countries.append(country)
-    #numeric_areas.append(numeric_area)
-    #populations.append(population)
+    countries.append(country)
+    numeric_areas.append(numeric_area)
+    populations.append(population)
     
     densities.append(density)
 
