@@ -196,6 +196,7 @@ fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', 
 st.plotly_chart(fig, use_container_width=True)
 ##################################################################################################################
 st.write(" # Evolution of Population")
+st.write('Please zoom in')
 
 df = px.data.gapminder()
 fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
@@ -209,7 +210,7 @@ st.plotly_chart(fig,use_container_width=True)
 st.divider()
 
 st.write(' ### Select a Country')
-selected_country = st.selectbox(' Select a Country!', [country[0] for country in country_data])
+selected_country = st.selectbox('', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
 numeric_area = get_area(selected_country, selected_iso_code)
@@ -248,7 +249,7 @@ if st.button("Click here if you're done learning about countries"):
 
 #############################################################################################################
 st.divider()
-st.divider()
+
 st.write("Created by Beatriz Garcia, Oscar Arenas, Abdulah Rashed")
 st.write(" Data from the World Geo Data API")
 
