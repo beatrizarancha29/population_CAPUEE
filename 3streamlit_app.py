@@ -27,7 +27,7 @@ st.write("""
 # Country Data Web App 
 """)
 
-st.write(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
+st.text_area)(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
 
 import streamlit as st
 
@@ -122,10 +122,9 @@ st.toast('Who doesn´t travel...')
 time.sleep(.9)
 st.toast('... only reads the first page')
 
-
 ###########################################################################################   
 st.write("# Population of Countries")
-################################################################################################
+
 populations = []
 countries = []
 
@@ -141,7 +140,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 st.bar_chart(df.set_index('Country'), color="#00FF00")
 #####################################################################################################################
-##################################################################################################
+
 st.write( "# Area of Countries")
 
 countries = []
@@ -160,7 +159,6 @@ df = pd.DataFrame(data)
 st.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
-##################################################################################################
 densities = []
 countries = []
 populations = []
@@ -216,7 +214,6 @@ st.toast('...a different version...')
 time.sleep(.9)
 st.toast('... of life')
 
-
 ############################################################################################################3
 st.title("World Map")
 
@@ -226,5 +223,6 @@ if st.button("I learned evertything I wanted to know about countries"):
     st.balloons()       
 
 #############################################################################################################
-
+st.write("Created by Beatriz Garcia, Oscar Arenas, Abdulah Rashed")
+st.write(" Data from the World Geo Data API")
 
