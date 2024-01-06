@@ -138,7 +138,7 @@ data = {'Country': countries, 'Population': populations}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-col1.write("# Population of Countries")
+col1.write("### Population of Countries")
 col1.bar_chart(df.set_index('Country'), color="#00FF00")
 #####################################################################################################################
 
@@ -155,7 +155,7 @@ data = {'Country': countries, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-col2.write( "# Area of Countries")
+col2.write( "### Area of Countries")
 col2.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
@@ -179,8 +179,6 @@ for country, iso_code in country_data:
 data = {'Area': numeric_areas,'Density': densities, 'Population':populations, 'Country': countries}
 df = pd.DataFrame(data)
 
-st.write("# Population Density Bubble Chart")
-
 #fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country',log_x=True)
 #st.plotly_chart(fig, use_container_width=True)
 
@@ -193,6 +191,8 @@ fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', 
 
 st.plotly_chart(fig, use_container_width=True)
 ##################################################################################################################
+st.write(" # Evolution of Population")
+
 df = px.data.gapminder()
 fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
                      hover_name="country", size="pop",
@@ -201,15 +201,7 @@ fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
 
 st.plotly_chart(fig,use_container_width=True)
 
-##########################################################################################################################33
-df = px.data.gapminder()
-
-fig = px.scatter(df.query("year==2007"), x="gdpPercap", y="lifeExp",
-	         size="pop", color="continent",
-                 hover_name="country", log_x=True, size_max=60)
-fig.show()
-
-#####################################################################################################
+########################################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
