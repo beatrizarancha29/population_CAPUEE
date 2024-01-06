@@ -27,7 +27,7 @@ st.write("""
 # Country Data Web App 
 """)
 
-st.text_area(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
+st.write(" ### Welcome to the Country Data Web App. Take a look at global data or select a country to find out more details. Enjoy!")
 
 import streamlit as st
 
@@ -160,19 +160,19 @@ st.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
 densities = []
-countries = []
-populations = []
-countries = []
-numeric_areas = []
+#countries = []
+#populations = []
+#countries = []
+#numeric_areas = []
 
 for country, iso_code in country_data:
-    population = get_population_data(country, iso_code)
-    numeric_area = get_area(country, iso_code)
+    #population = get_population_data(country, iso_code)
+    #numeric_area = get_area(country, iso_code)
     density = population / numeric_area
     
-    countries.append(country)
-    numeric_areas.append(numeric_area)
-    populations.append(population)
+    #countries.append(country)
+    #numeric_areas.append(numeric_area)
+    #populations.append(population)
     
     densities.append(density)
 
