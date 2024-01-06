@@ -202,7 +202,7 @@ fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
 st.plotly_chart(fig,use_container_width=True)
 
 ########################################################################################################################
-selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
+selected_country = st.selectbox(' ### Select a Country!', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
 numeric_area = get_area(selected_country, selected_iso_code)
