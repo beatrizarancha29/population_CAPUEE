@@ -44,7 +44,7 @@ col1, col2, col3, = st.columns(3)
 st.write("""
 
 ### World population: 8.1 Billion""" )
-
+st.divider()
 #########################################################################################################################################################
 st.write( """
 ## Top 3 most populous countries
@@ -78,6 +78,8 @@ population_in_millions = population / 1000000
 area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
 col3.write(f"Area: {area_in_millions} Million sq. km")
+
+st.divider()
 
 st.write( """
 ## Top 3 largest countries
@@ -113,7 +115,7 @@ area_in_millions = numeric_area/100000
 col3.write(f" Population: {population_in_millions:.2f} Million")
 col3.write(f"Area: {area_in_millions} Million sq. km")
 
-
+st.divider()
 st.toast('The world ...',)
 time.sleep(.9)
 st.toast('... is like a book',)
@@ -140,6 +142,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 col1.write("### Population of Countries")
 col1.bar_chart(df.set_index('Country'), color="#00FF00")
+st.divider()
 #####################################################################################################################
 
 countries = []
@@ -157,6 +160,7 @@ df = pd.DataFrame(data)
 # Create a bar chart using Streamlit
 col2.write( "### Area of Countries")
 col2.bar_chart(df.set_index('Country'), color="#FF0000")
+
 #######################################################################################################3
 
 densities = []
@@ -202,7 +206,10 @@ fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
 st.plotly_chart(fig,use_container_width=True)
 
 ########################################################################################################################
-selected_country = st.selectbox(' ### Select a Country!', [country[0] for country in country_data])
+st.divider()
+
+st.write(' ### Select a Country')
+selected_country = st.selectbox(' Select a Country!', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
 numeric_area = get_area(selected_country, selected_iso_code)
@@ -240,6 +247,8 @@ if st.button("Click here if you're done learning about countries"):
     st.balloons()       
 
 #############################################################################################################
+st.divider()
+st.divider()
 st.write("Created by Beatriz Garcia, Oscar Arenas, Abdulah Rashed")
 st.write(" Data from the World Geo Data API")
 
