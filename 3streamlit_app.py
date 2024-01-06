@@ -181,8 +181,33 @@ df = pd.DataFrame(data)
 
 st.write("# Population Density Bubble Chart")
 
-fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country',log_x=True)
+#fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country',log_x=True)
+#st.plotly_chart(fig, use_container_width=True)
+
+color_scale = px.colors.sequential.Viridis  # You can choose any color scale you prefer
+
+st.write("# Population Density Bubble Chart")
+
+fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', hover_name='Country',
+                 log_x=True, color_continuous_scale=color_scale)
+
 st.plotly_chart(fig, use_container_width=True)
+##################################################################################################################
+df = px.data.gapminder()
+fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
+                     hover_name="country", size="pop",
+                     animation_frame="year",
+                     projection="natural earth")
+
+st.plotly_chart(fig,use_container_width=True)
+
+##########################################################################################################################33
+df = px.data.gapminder()
+
+fig = px.scatter(df.query("year==2007"), x="gdpPercap", y="lifeExp",
+	         size="pop", color="continent",
+                 hover_name="country", log_x=True, size_max=60)
+fig.show()
 
 #####################################################################################################
 selected_country = st.selectbox('Select a Country', [country[0] for country in country_data])
@@ -219,7 +244,7 @@ st.title("World Map")
 
 st.map()
 
-if st.button("I learned evertything I wanted to know about countries"):
+if st.button("Click here if you're done learning about countries"):
     st.balloons()       
 
 #############################################################################################################
