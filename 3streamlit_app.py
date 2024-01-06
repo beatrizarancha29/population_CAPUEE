@@ -189,6 +189,8 @@ df = pd.DataFrame(data)
 color_scale = px.colors.sequential.Viridis  # You can choose any color scale you prefer
 
 st.write("# Population Density Bubble Chart")
+st.write('Please zoom in')
+
 
 fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', hover_name='Country',
                  log_x=True, color_continuous_scale=color_scale)
@@ -196,7 +198,6 @@ fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', 
 st.plotly_chart(fig, use_container_width=True)
 ##################################################################################################################
 st.write(" # Evolution of Population")
-st.write('Please zoom in')
 
 df = px.data.gapminder()
 fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
@@ -209,7 +210,7 @@ st.plotly_chart(fig,use_container_width=True)
 ########################################################################################################################
 st.divider()
 
-st.write(' ### Select a Country')
+st.write(' ### Select a Country!')
 selected_country = st.selectbox('', [country[0] for country in country_data])
 selected_iso_code = [country[1] for country in country_data if country[0] == selected_country][0]
 
