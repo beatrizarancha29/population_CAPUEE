@@ -155,8 +155,8 @@ data = {'Country': countries, 'Area': numeric_areas}
 df = pd.DataFrame(data)
 
 # Create a bar chart using Streamlit
-col2.st.write( "# Area of Countries")
-col2.st.bar_chart(df.set_index('Country'), color="#FF0000")
+col2.write( "# Area of Countries")
+col2.bar_chart(df.set_index('Country'), color="#FF0000")
 #######################################################################################################3
 
 densities = []
