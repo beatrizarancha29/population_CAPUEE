@@ -183,8 +183,6 @@ for country, iso_code in country_data:
 data = {'Area': numeric_areas,'Density': densities, 'Population':populations, 'Country': countries}
 df = pd.DataFrame(data)
 
-#fig = px.scatter(df,x='Area',y='Density', size='Population', hover_name='Country',log_x=True)
-#st.plotly_chart(fig, use_container_width=True)
 
 color_scale = px.colors.sequential.Viridis  # You can choose any color scale you prefer
 
@@ -197,15 +195,15 @@ fig = px.scatter(df, x='Area', y='Density', size='Population', color='Density', 
 
 st.plotly_chart(fig, use_container_width=True)
 ##################################################################################################################
-st.write(" # Evolution of Population")
+#st.write(" # Evolution of Population")
 
-df = px.data.gapminder()
-fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
-                     hover_name="country", size="pop",
-                     animation_frame="year",
-                     projection="natural earth")
+#df = px.data.gapminder()
+#fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
+                 #    3hover_name="country", size="pop",
+                # animation_frame="year",
+                    # projection="natural earth")
 
-st.plotly_chart(fig,use_container_width=True)
+#st.plotly_chart(fig,use_container_width=True)
 
 ########################################################################################################################
 st.divider()
